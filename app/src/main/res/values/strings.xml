@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Project Application</string>
+    <string name="txtinly_hint_hiworld">Hola mundo</string>
+    <string name="btn_go_scndact_text">Ir a segunda activity</string>
+    <string name="btn_go_firstdact_text">Ir a primera activity</string>
+    <string name="loginActivityTitle_text">Login</string>
+    <string name="loginActivityUsername_hint">Usuario</string>
+    <string name="loginActivityPassword_hint">Contraseña</string>
+    <string name="btn_register_text">Registrar</string>
+    <string name="btn_login_text">Iniciar sesión</string>
+</resources>
