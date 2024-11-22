@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -34,60 +35,60 @@ class LoginActivity : AppCompatActivity() {
 
         val myAppDb = (application as MyAppRoomApplication).myAppDb
         binding.apply {
-            btnNav.setOnClickListener {
-                val intent = Intent(this@LoginActivity, SecondActivity::class.java)
-                startActivity(intent)
-            }
 
-
-
-
-
-
-//        btnLogin.setOnClickListener{
-//            val userAdd = UsersEntity(
-//                name = "admin",
-//                email = "admin@admin.com",
-//                userName = "admin",
-//                password = "admin"
-//
-//            )
-//            CoroutineScope(Dispatchers.IO).launch {
-//                myAppDb.usersDao().insert(userAdd)
-//            }
-//        }
 
             btnLogin.setOnClickListener{
+
+                val username = txtedtxtUsername.text.toString()
+                val password = txtedtxtPassword.text.toString()
+
+                if (username.isEmpty() || password.isEmpty()) {
+                    runOnUiThread{
+                        val builder = AlertDialog.Builder(this@LoginActivity)
+                        builder.setTitle("Campos vacíos")
+                        builder.setMessage("Por favor, llena todos los campos")
+                        builder.setPositiveButton("OK") { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                        builder.create().show()
+                    }
+
+                }
+                else {
                 val userToCheck = UsersEntity(
-                    userName = txtedtxtUsername.text.toString(),
-                    password = txtedtxtPassword.text.toString(),
+                    userName = username,
+                    password = password,
                 )
 
                 CoroutineScope(Dispatchers.IO).launch {
                     val user = myAppDb.usersDao().getUser(userToCheck.userName, userToCheck.password)
                     if (user != null) {
-                        val intent = Intent(this@LoginActivity, SecondActivity::class.java)
+                        val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                         intent.putExtras(Bundle().apply {
                             putString("name", user.name)
                         })
                         startActivity(intent)
                     } else {
-                        Log.d("LoginActivity", "User is not logged in")
+                        runOnUiThread {
+                            val builder = AlertDialog.Builder(this@LoginActivity)
+                            builder.setTitle("Credenciales Incorrectas")
+                            builder.setMessage("Usuario o contraseña incorrectos")
+                            builder.setPositiveButton("Intentar nuevamente") { dialog, _ ->
+                                dialog.dismiss()
+                            }
+                            builder.create().show()
+                            txtedtxtUsername.text?.clear()
+                            txtedtxtPassword.text?.clear()
+                        }
+                    }
+
                     }
                 }
+
             }
             btnRegister.setOnClickListener {
-                CoroutineScope(Dispatchers.IO).launch {
-
-                    val customers = myAppDb.usersDao().getAllUsers()
-
-                    runOnUiThread {
-
-                        val customerNames = customers.joinToString("\n") { it.name.toString() }
-
-                        binding.txtViewCustomers.text = customerNames
-                    }
-                }
+                val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+                startActivity(intent)
             }
 
         }

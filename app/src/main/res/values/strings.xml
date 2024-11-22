@@ -2,10 +2,22 @@
     <string name="app_name">My Project Application</string>
     <string name="txtinly_hint_hiworld">Hola mundo</string>
     <string name="btn_go_scndact_text">Ir a segunda activity</string>
-    <string name="btn_go_firstdact_text">Ir a primera activity</string>
+    <string name="btn_add_user_txt">Agregar Usuario</string>
+    <string name="btn_view_user_txt">Ver Usuarios</string>
+    <string name="btn_delete_user_txt">Eliminar Usuario</string>
+    <string name="btn_update_user_txt">Actualizar Usuario</string>
     <string name="loginActivityTitle_text">Login</string>
     <string name="loginActivityUsername_hint">Usuario</string>
     <string name="loginActivityPassword_hint">Contraseña</string>
     <string name="btn_register_text">Registrar</string>
     <string name="btn_login_text">Iniciar sesión</string>
+    <string name="register_btn_hint">Registrar</string>
+    <string name="back_btn_hint">Volver</string>
+    <string name="text_name_hint">Nombre</string>
+    <string name="text_email_hint">Correo</string>
+    <string name="text_password_hint">Contraseña</string>
+    <string name="text_username_hint">Usuario</string>
+    <string name="register_title">Registro</string>
+    <string name="toolbar_home_title">Inicio</string>
+    <string name="home_activity_welcome_text">Bienvenido</string>
 </resources>
