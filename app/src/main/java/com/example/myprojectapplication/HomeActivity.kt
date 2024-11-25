@@ -50,7 +50,7 @@ class HomeActivity : AppCompatActivity() {
             if(photoUrl != null){
                 showPhotoUrl(photoUrl)
             }
-            tvMessage.text = "Hello, ${name ?: "World"}"
+            tvMessage.text = "Bienvenido, ${name ?: "World"}"
 
             btnSignOutGoogle.setOnClickListener {
                 signOutUser()
