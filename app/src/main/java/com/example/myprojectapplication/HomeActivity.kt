@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myprojectapplication.databinding.ActivityHomeBinding
+import com.example.myprojectapplication.helpers.GoogleAuthHelper
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.auth.api.identity.SignInClient
@@ -18,26 +19,15 @@ import java.util.concurrent.Executors
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var auth: FirebaseAuth
-    private var onTapClient: SignInClient? = null
-    private lateinit var signInRequest: BeginSignInRequest
+    private lateinit var googleAuthHelper: GoogleAuthHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-
-        auth = Firebase.auth
-        onTapClient = Identity.getSignInClient(this)
-        signInRequest = BeginSignInRequest.builder()
-            .setGoogleIdTokenRequestOptions(
-                BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
-                    .setSupported(true)
-                    .setServerClientId(getString(R.string.default_web_client_id))
-                    .setFilterByAuthorizedAccounts(false)
-                    .build()
-            )
-            .build()
+        googleAuthHelper = GoogleAuthHelper(this)
+        googleAuthHelper.init()
 
         binding.apply {
             btnAddUser.setOnClickListener {
@@ -53,20 +43,14 @@ class HomeActivity : AppCompatActivity() {
             tvMessage.text = "Bienvenido, ${name ?: "World"}"
 
             btnSignOutGoogle.setOnClickListener {
-                signOutUser()
+                googleAuthHelper.signOut(context = this@HomeActivity, binding = binding)
             }
         }
     }
 
 
 
-    private fun signOutUser(){
-        Firebase.auth.signOut()
-        Toast.makeText(this, "Usuario deslogueado", Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, LoginActivity::class.java)
-        binding.profileImage.setImageBitmap(null)
-        startActivity(intent)
-    }
+
 
     private fun showPhotoUrl(photoUrl: String) {
         var image: Bitmap? = null
