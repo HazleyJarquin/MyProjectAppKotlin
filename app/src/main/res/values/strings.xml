@@ -20,4 +20,6 @@
     <string name="register_title">Registro</string>
     <string name="toolbar_home_title">Inicio</string>
     <string name="home_activity_welcome_text">Bienvenido</string>
+    <string name="default_web_client_id">338513010841-5uvb7kstau4eo5oeukit0ogi7aqtau1p.apps.googleusercontent.com</string>
+    <string name="google_sign_in_text">Iniciar sesión con Google</string>
 </resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RoundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">100dp</item>
+    </style>
+
+
+    <style name="CustomShapeAppearance" parent="Widget.MaterialComponents.Button">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+        <item name="elevation">8dp</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+
+    <style name="CustomGoogleButton" parent="Widget.MaterialComponents.Button">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+        <item name="elevation">4dp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="CardShadow" parent="Widget.MaterialComponents.Button">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+        <item name="elevation">4dp</item>
+    </style>
+
+</resources>

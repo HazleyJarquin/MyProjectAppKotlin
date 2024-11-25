@@ -32,23 +32,53 @@
         app:layout_constraintTop_toTopOf="@id/toolbar" />
 
 
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="Profile Image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        app:shapeAppearanceOverlay="@style/RoundedImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_message" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignOutGoogle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="?attr/colorSecondary"
+        android:text="LogOut"
+        android:textAllCaps="false"
+        android:textColor="?attr/colorOnSecondary"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_message" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAddUser"
         android:layout_width="170dp"
         android:layout_height="162dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="116dp"
         android:layout_marginEnd="16dp"
-        app:strokeColor="@android:color/darker_gray"
-        app:strokeWidth="1dp"
-        android:text="@string/btn_add_user_txt"
         android:backgroundTint="@android:color/white"
+        android:text="@string/btn_add_user_txt"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
         app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_message" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_message"
+        style="@style/CardShadow"
+        />
 
 
     <com.google.android.material.button.MaterialButton
@@ -56,20 +86,17 @@
         android:layout_width="170dp"
         android:layout_height="162dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="116dp"
         android:layout_marginEnd="16dp"
-        app:strokeColor="@android:color/darker_gray"
-        app:strokeWidth="1dp"
         android:backgroundTint="@android:color/white"
-        android:textColor="@color/black"
         android:text="@string/btn_view_user_txt"
+        android:textColor="@color/black"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_message" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/tv_message"
+        style="@style/CardShadow" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnDeleteUser"
@@ -78,8 +105,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="16dp"
-        app:strokeColor="@android:color/darker_gray"
-        app:strokeWidth="1dp"
+        style="@style/CardShadow"
         android:text="@string/btn_delete_user_txt"
         android:backgroundTint="@android:color/white"
         android:textColor="@color/black"
@@ -97,8 +123,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="16dp"
-        app:strokeColor="@android:color/darker_gray"
-        app:strokeWidth="1dp"
+        style="@style/CardShadow"
         android:backgroundTint="@android:color/white"
         android:textColor="@color/black"
         android:text="@string/btn_update_user_txt"
