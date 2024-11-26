@@ -22,4 +22,6 @@
     <string name="home_activity_welcome_text">Bienvenido</string>
     <string name="default_web_client_id">338513010841-5uvb7kstau4eo5oeukit0ogi7aqtau1p.apps.googleusercontent.com</string>
     <string name="google_sign_in_text">Iniciar sesión con Google</string>
+    <string name="view_users_toolbar_title">Usuarios</string>
+    <string name="delete_user_btn_hint">Eliminar</string>
 </resources>

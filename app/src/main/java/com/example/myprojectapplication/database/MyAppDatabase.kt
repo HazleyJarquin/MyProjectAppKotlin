@@ -7,7 +7,7 @@ import com.example.myprojectapplication.MyAppRoomApplication
 import com.example.myprojectapplication.database.dao.UsersDao
 import com.example.myprojectapplication.database.entity.UsersEntity
 
-@Database(entities = [UsersEntity::class], version = 5)
+@Database(entities = [UsersEntity::class], version = 6)
 abstract class MyAppDatabase: RoomDatabase() {
     abstract fun usersDao(): UsersDao
     companion object {

@@ -1,6 +1,7 @@
 package com.example.myprojectapplication.database.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -17,4 +18,10 @@ interface UsersDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(customerEntity: UsersEntity)
+
+    @Query("SELECT * FROM USERS WHERE id = :id LIMIT 1")
+    fun getUserById(id: Int): UsersEntity?
+
+    @Query("DELETE FROM USERS WHERE id = :id")
+    fun deleteUserById(id: Int)
 }

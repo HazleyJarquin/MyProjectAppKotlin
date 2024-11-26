@@ -4,17 +4,10 @@ import android.os.Bundle
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myprojectapplication.databinding.ActivityHomeBinding
 import com.example.myprojectapplication.helpers.GoogleAuthHelper
-import com.google.android.gms.auth.api.identity.BeginSignInRequest
-import com.google.android.gms.auth.api.identity.Identity
-import com.google.android.gms.auth.api.identity.SignInClient
-import com.google.firebase.Firebase
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
 import java.util.concurrent.Executors
 
 class HomeActivity : AppCompatActivity() {
@@ -30,10 +23,7 @@ class HomeActivity : AppCompatActivity() {
         googleAuthHelper.init()
 
         binding.apply {
-            btnAddUser.setOnClickListener {
-                val intent = Intent(this@HomeActivity, LoginActivity::class.java)
-                startActivity(intent)
-            }
+
             val name = intent.extras?.getString("name")
             val photoUrl = intent.extras?.getString("photoUrl")
 
@@ -45,11 +35,13 @@ class HomeActivity : AppCompatActivity() {
             btnSignOutGoogle.setOnClickListener {
                 googleAuthHelper.signOut(context = this@HomeActivity, binding = binding)
             }
+
+            btnViewUsers.setOnClickListener {
+                val intent = Intent(this@HomeActivity, ViewUsersActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
-
-
-
 
 
     private fun showPhotoUrl(photoUrl: String) {
