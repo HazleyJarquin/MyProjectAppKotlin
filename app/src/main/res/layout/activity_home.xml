@@ -80,21 +80,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_message" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnFavUsers"
-        style="@style/CardShadow"
-        android:layout_width="170dp"
-        android:layout_height="162dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@android:color/white"
-        android:text="@string/btn_update_user_txt"
-        android:textColor="@color/black"
-        app:cornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_message" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

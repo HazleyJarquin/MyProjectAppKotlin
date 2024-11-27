@@ -24,4 +24,8 @@
     <string name="google_sign_in_text">Iniciar sesión con Google</string>
     <string name="view_users_toolbar_title">Usuarios</string>
     <string name="delete_user_btn_hint">Eliminar</string>
+    <string name="o_text_hint">O</string>
+    <string name="txt_no_registed">No tienes una cuenta? Registrate</string>
+    <string name="toolbar_title_update_user">Actualizar Usuario</string>
+    <string name="update_user_btn_hint">Actualizar</string>
 </resources>

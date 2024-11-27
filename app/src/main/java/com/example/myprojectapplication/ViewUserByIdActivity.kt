@@ -73,6 +73,17 @@ class ViewUserByIdActivity : AppCompatActivity() {
             }
 
 
+            updateUserBtn.setOnClickListener {
+                val intent = Intent(this@ViewUserByIdActivity, UpdateUserActivity::class.java)
+                intent.putExtras(Bundle().apply {
+                    putInt("id", id)
+                    putString("name", nameTxt.text.toString())
+                    putString("email", emailTxt.text.toString())
+                    putString("username", usernameTxt.text.toString())
+                })
+                startActivity(intent)
+            }
+
 
             CoroutineScope(Dispatchers.IO).launch {
                 try {

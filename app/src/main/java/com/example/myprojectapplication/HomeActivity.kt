@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
             if(photoUrl != null){
                 showPhotoUrl(photoUrl)
             }
-            tvMessage.text = "Bienvenido, ${name ?: "World"}"
+            tvMessage.text = "Bienvenido, ${name ?: "Usuario"}"
 
             btnSignOutGoogle.setOnClickListener {
                 googleAuthHelper.signOut(context = this@HomeActivity, binding = binding)
