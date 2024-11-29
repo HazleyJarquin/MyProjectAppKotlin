@@ -28,4 +28,5 @@
     <string name="txt_no_registed">No tienes una cuenta? Registrate</string>
     <string name="toolbar_title_update_user">Actualizar Usuario</string>
     <string name="update_user_btn_hint">Actualizar</string>
+    <string name="btn_view_weather_txt">Ver Clima</string>
 </resources>
