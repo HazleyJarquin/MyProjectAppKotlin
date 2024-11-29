@@ -40,6 +40,11 @@ class HomeActivity : AppCompatActivity() {
                 val intent = Intent(this@HomeActivity, ViewUsersActivity::class.java)
                 startActivity(intent)
             }
+
+            btnViewWeather.setOnClickListener {
+                val intent = Intent(this@HomeActivity, WeatherActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
