@@ -1,6 +1,7 @@
 package com.example.myprojectapplication.weather
 
 data class WeatherResponse (
+    val dt: Long,
     val main: Main,
     val weather: List<Weather>,
     val name: String
@@ -12,5 +13,6 @@ data class Main(
 )
 
 data class Weather (
-    val description: String
+    val description: String,
+    val icon: String
 )
